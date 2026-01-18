@@ -19,6 +19,9 @@ RUN pip install --upgrade pip \
 # Copier le reste de l'application
 COPY . .
 
+# Désactiver le watcher de Streamlit pour éviter l'erreur inotify
+ENV STREAMLIT_WATCHDOG_DISABLE=true
+
 # Exposer le port de Streamlit
 EXPOSE 8501
 
